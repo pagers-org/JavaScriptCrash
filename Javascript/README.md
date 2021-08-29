@@ -22,10 +22,9 @@
       </td>
     </tr>
     <tr>
-      <td><a href="">변수</a></td>
+      <td rowspan="2"><a href="https://github.com/FECrash/JavascriptCrash/blob/main/Javascript/variable.md">변수, 표현식과 문</a></td>
     </tr>
     <tr>
-      <td><a href="">표현식과 문</a></td>
     </tr>
   </tbody>
 </table>
