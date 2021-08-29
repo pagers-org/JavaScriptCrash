@@ -151,10 +151,13 @@ while(true){
 바로 코드를 볼까요?
 
 ```js
-// 할당문(Assignment statement) : 표현식이자 문 그 자체
-let num = 5;
 // 선언문(Declaration statement) : 표현식을 포함하는 문
+let num;
+// 할당문(Assignment statement) : 표현식이자 문 그 자체
+num = 5;
+// 선언문
 const MAX_NUM = num * 10;
+// 할당문
 num = 0;
 ```
 
