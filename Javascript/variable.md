@@ -88,6 +88,7 @@ let a = 'a';
 
 리터럴 표기법에 대한 자세한 내용은 [여기](https://en.wikipedia.org/wiki/Literal_(computer_programming))를 참조하세요.
 
+<hr>
 <br>
 <hr>
 
@@ -150,7 +151,7 @@ while(true){
 바로 코드를 볼까요?
 
 ```js
-// 할망문(Assignment statement) : 표현식이자 문 그 자체
+// 할당문(Assignment statement) : 표현식이자 문 그 자체
 let num = 5;
 // 선언문(Declaration statement) : 표현식을 포함하는 문
 const MAX_NUM = num * 10;
