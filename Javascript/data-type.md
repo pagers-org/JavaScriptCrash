@@ -5,9 +5,48 @@
 
 ### 분류
 데이터 타입은 크게 원시(Primitive) 타입과 객체(또는 참조, Object/Reference) 타입으로 분류합니다.
-- `Number, String, Boolean, undefined, null, Symbol은 원시 타입`입니다. `그 외는 객체 타입`입니다.
+1. `Number, String, Boolean, undefined, null, Symbol은 원시 타입`입니다. `그 외는 객체 타입`입니다.
+2. 원시 타입은 변경 불가능한 값(Immutable Value)입니다.
+3. 참조 타입은 변경 가능한 값(Mutable Value)입니다.
+
+글로만 보면 이해하기 힘들거에요. 그림과 함께 봅시다.
+
+<br>
+
+#### 원시 타입(Primitiv Type) : 변경 불가능한 값(Immutable Value)
+> 기존에 할당된 값을 직접 변경하는 것이 아니라 새로운 원시 값을 생성합니다.
+
+<div align="center">
+
+<img src="./img/data-type/immuable_value_01.jpg" width="500"/>
+
+<img src="./img/data-type/immuable_value_02.jpg" height="200"/>
+
+<img src="./img/data-type/immuable_value_03.jpg" width="500">
+
+</div>
+
+
+<br>
+
+#### 객체 타입(Object Type) : 변경 가능한 값(Mutable Value)
+> 기존에 할당된 값을 직접 변경할 수 있습니다.
+
+<div align="center">
+
+<img src="./img/data-type/mutable_value_01.jpg" width="500"/>
+
+<img src="./img/data-type/mutable_value_02.jpg" width="500"/>
+
+<img src="./img/data-type/mutable_value_03.jpg" height="500">
+
+</div>
+
+<br>
 
 숫자 `1`과 문자열 `'1'`은 비슷해 보이지만 다릅니다. 용도(연산, 화면에 출력 등) 뿐만 아니라 각 타입별 확보할 메모리 공간의 크기와 2진수 값도 다르고 심지어 해석조차 틀립니다.
+
+<br>
 
 ### 필요성
 만약 같다면 어떻게 될까요? 타입은 의미가 없어지고 연산, 출력 등 프로그래밍 언어로써의 기능을 성실히 수행할 수 있을까요? 개발자가 불러오려는 값이 생각과 다르게 제어된다면 기초적인 애플레케이션을 작성할 수도 없을 것입니다. 예를 들어 1 + 3 연산을 진행했는데 13이 될 수도 있고, 4가 될 수도 있습니다. 이런 기초적인 연산조차 혼동이 올 수 있어요.
@@ -35,6 +74,8 @@ console.log(b);
 
 1. 메모리 공간의 크기를 결정 : 데이터 타입에 따라 값을 저장할 때 필요한 공간이 달라진다.
 2. 2진수를 해석하는 방법을 결정 : 데이터 타입에 따라 메모리에서 읽어온 값을 해석하는 방법이 달라진다.
+
+<br>
 
 ### 동적 타입과 정적 타입?
 생소한 단어가 나왔습니다. 그 전에, 한 번 생각해봅시다. 자바스크립트에서 변수를 선언할 때, 우리는 타입을 `정해줄까요?`
@@ -84,6 +125,8 @@ C, Java 등은 `int a = 0` 형태로 변수를 선언합니다. 즉 초기화-�
 
 이대로 끝내기에는 조금 아쉬우니, 타입별로 간략하게 짚고 넘어가보죠.
 
+<br>
+
 ### 데이터 타입 : Number
 > 자바스크립트는 int, long, float, double 등 다양한 숫자 타입이 `존재하지 않습니다`.
 
@@ -114,6 +157,8 @@ ECMAScript 사양에서는 숫자 타입의 값을 [배정밀도 64비트 부동
   console.log(INF * 'a')      // NaN(not a number, 연산 불가)
   ```
 
+<br>
+
 ### 데이터 타입 : String
 > 0개 이상 16비트 유니코드 문자(UTF-16)의 집합으로 전 세계 대부분의 문자를 표현할 수 있습니다.
 
@@ -126,21 +171,58 @@ ECMAScript 사양에서는 숫자 타입의 값을 [배정밀도 64비트 부동
   - LF는 Unix 체계의 개행 방식입니다.
   - 자바스크립트는 두 개행방식을 지원하지만, LF를 권장합니다.
 
+<br>
+
 ### 데이터 타입 : Boolean
 > 논리적 참과 거짓을 나타냅니다.
+
+<br>
 
 ### 데이터 타입 : undefined
 > 개발자가 의도적으로 할당하기 위한 값이 아니라 자바스크립트 엔진이 변수를 초기화할 때 사용하는 값입니다.
 
 undefined 값은 유일합니다.
 
+<br>
+
 ### 데이터 타입 : null
 > 변수에 null을 할당함은 이전에 참조하던 값을 더 이상 참조하지 않는다는, 값에 대한 참조를 명시적으로 제거하는 의미입니다.
 
 null 값은 유일합니다.
 
+<br>
+
 ### 데이터 타입 : Symbol
 > ES6에서 추가됐으며 변경 불가능한 원시 타입의 값으로 중복되지 않는 유일무이한 값입니다.
 
+<br>
+
 ### 데이터 타입 : Object
 차후 깊게 다룹니다. 여기서는 자바스크립트가 **객체 기반의 언어** 이며 **자바스크립트의 거의 모든 것이 객체** 라고 알아두세요.
+
+<hr>
+<br>
+<hr>
+
+이번 장에서 타입 변환에 대해 자세히 다룹니다. 종류와 그 내용까지 말이죠.
+
+## 타입 변환(Type Conversion)
+> 자바스크립트의 모든 값은 타입이 존재하며, 이를 변환하는 방법에는 개발자에 의해 변환되는 방법과 개발자의 의도와 상관 없이 변환되는 방법이 있습니다.
+
+- 타입 캐스팅(Type Casting, 또는 명시적 타입 변환(Explicit Coercion)) : 개발자가 의도적으로 값의 타입을 바꾸는 방법입니다.
+  ```js
+  let a = 10;
+  let b = a.toString();     // 여기서 타입 캐스팅이 일어납니다.
+  console.log(typeof b, b); // 'string', '10'
+  console.log(typeof a, a); // 'number', 10
+  ```
+
+- 타입 강제 변환(Type Coercion, 또는 암묵적 타입 변환(Implicit Coercion)) : 자바스크립트 엔진에 의해 암묵적으로 타입이 자동 변환되는 방법입니다.
+  ```js
+  let a = 10;
+  let b = a + '';
+  console.log(typeof b, b); // 'string', '10'
+  console.log(typeof a, a); // 'number', 10
+  ```
+
+<br>
