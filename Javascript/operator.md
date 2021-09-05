@@ -271,3 +271,12 @@ typeof 연산자가 반환하는 결과는 총 7가지('string', 'number', 'bool
 그 외, 연산자 우선순위는 이해와 암기가 아닙니다. 참조를 자주 해보세요. 아래에 링크를 준비해두었습니다.
 
 연산자 우선순위 [Link](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Operators/Operator_Precedence)
+
+<hr>
+<br>
+<hr>
+
+논리 연산자를 좀 더 효율적으로 사용할 수 있는 단축 평가에 대해 알아봅니다.
+
+## 단축 평가(Short-circuit Evaluation)
+> 논리합(||)과 논리곱(&&) 연산자로 표현식의 평가 결과를 단축하여 사용하는 방법입니다.

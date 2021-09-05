@@ -20,12 +20,29 @@
 
 <img src="./img/data-type/immuable_value_01.jpg" width="500"/>
 
-<img src="./img/data-type/immuable_value_02.jpg" height="200"/>
-
-<img src="./img/data-type/immuable_value_03.jpg" width="500">
+<p>변수 score의 값 할당과 재할당에 대한 메모리 주소</p>
 
 </div>
 
+<br>
+
+<div align="center">
+
+<img src="./img/data-type/immuable_value_03.jpg" width="500">
+
+<p>원시 값을 복사할 때의 메모리 상태</p>
+
+</div>
+
+<br>
+
+<div align="center">
+
+<img src="./img/data-type/immuable_value_02.jpg" height="200"/>
+
+<p>원시 값이 변경될 때의 논리</p>
+
+</div>
 
 <br>
 
@@ -36,9 +53,27 @@
 
 <img src="./img/data-type/mutable_value_01.jpg" width="500"/>
 
+<p>변수 score의 값 할당과 재할당에 대한 메모리 주소</p>
+
+</div>
+
+<br>
+
+<div align="center">
+
 <img src="./img/data-type/mutable_value_02.jpg" width="500"/>
 
+<p>변수 score의 값 할당과 재할당에 대한 메모리 주소</p>
+
+</div>
+
+<br>
+
+<div align="center">
+
 <img src="./img/data-type/mutable_value_03.jpg" height="500">
+
+<p>변수 score의 값 할당과 재할당에 대한 메모리 주소</p>
 
 </div>
 
