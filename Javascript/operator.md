@@ -210,6 +210,8 @@ console.log(!a);
   !(a && b) === (!a || !b)
   ```
 
+논리 연산자에서 다루기 힘든 `단축 평가`라는 내용이 있습니다. 이 항목은 아래에서 자세히 살펴봅니다.
+
 <br>
 
 ### 쉼표 연산자(Comma Operator)
@@ -278,5 +280,151 @@ typeof 연산자가 반환하는 결과는 총 7가지('string', 'number', 'bool
 
 논리 연산자를 좀 더 효율적으로 사용할 수 있는 단축 평가에 대해 알아봅니다.
 
+> 들어가기에 앞서 : 이 내용은 `암묵적 타입 변환`과 관련이 있으므로, 타입 변환을 이해하신 다음 진행할 수 있습니다. 해당 지식이 부족하다고 느끼시면 [여기]()에서 다시 한 번 읽어볼까요?
+
+<br>
+
 ## 단축 평가(Short-circuit Evaluation)
-> 논리합(||)과 논리곱(&&) 연산자로 표현식의 평가 결과를 단축하여 사용하는 방법입니다.
+> `논리곱(&&)`과 `논리합(||)` 등의 연산자로 표현식의 평가 결과를 단축하여 사용하는 방법입니다.
+
+### 논리 연산자
+> 논리합, 논리곱 연산자 표현식의 평가 결과는 **불리언 값이 아닐 수 있습니다**. 언제나 두 개의 피연산자 중 **어느 한 쪽으로 평가**될 뿐이죠.
+
+- `논리곱` 연산자는 **좌항에서 우항으로 평가**하며, 두 개의 피연산자가 모두 **true일 때 true**를 반환합니다.
+- `논리합` 연산자도 **좌항에서 우항으로 평가**하지만, 하나만 **true일 때 true**를 반환합니다.
+
+이처럼 논리 연산 결과를 피연산자를 타입 변환하지 않고 **그대로** 반환합니다. 이것을 단축 평가라고 합니다. 자세히 말하자면, 표현식을 평가하는 도중 평가 결과가 확정되면 `나머지 평가 과정을 생략`하는 것입니다. 규칙은 아래와 같아요.
+
+<table align="center">
+  <thead>
+    <th>표현식</th> 
+    <th>결과</th> 
+  </thead>
+  <tbody align="center">
+    <tr>
+      <td><em>true || anything</em></td>
+      <td>true</td>
+    </tr>
+    <tr>
+      <td><em>false || anything</em></td>
+      <td>anything</td>
+    </tr>
+    <tr>
+      <td><em>true && anything</em></td>
+      <td>anything</td>
+    </tr>
+    <tr>
+      <td><em>false && anything</em></td>
+      <td>false</td>
+    </tr>
+  </tbody>
+</table>
+
+
+예제를 통해 살펴볼까요?
+
+- if문을 단축 평가로 대체하기
+  ```js
+  // 논리곱
+  let complete = true;
+  let message = '';
+  // if문 :
+  if(complete) message = '완료';    // 1번
+  // 단축 평가 : 
+  message = complete && '완료';     // 2번
+
+  // 논리합
+  complete = false;
+  message = '';
+  // if문 :
+  if(!complete) message = '미완료'  // 1번
+  // 단축 평가 : 
+  message = !complete || '미완료';  // 2번
+  ```
+  - 1번과 2번은 동일한 기능을 합니다.
+
+
+- 객체의 null, undefined 확인과 프로퍼티 참조를 단축 평가로 대체하기
+  ```js
+  const elem = null;
+
+  // 객체 프로퍼티 직접 참조 :
+  console.log(elem.value);          // 1번
+  // 결과 : TypeError: Cannot read property 'value' of null
+
+  // 단축 평가 : 
+  console.log(elem && elem.value);  // 2번
+  // 결과 : null
+  ```
+  - 1번과 2번은 동일한 기능을 하지만, 2번은 에러를 발생시키지 않습니다.
+
+- 단축 평가로 함수 매개변수에 기본 값 설정하기
+  - 함수 호출 시 인수를 전달하지 않으면 매개변수에 undefined가 할당 되는데, 단축 평가를 이용하여 기본 값을 설정할 수 있습니다.
+    ```js
+    // ES5, 1번
+    function getStringLength(str) {
+      str = str || '';
+      return str.length;
+    }
+
+    getStringLength();     // 0
+    getStringLength('hi'); // 2
+
+    // ES6, 2번
+    function getStringLength(str = '') {
+      return str.length;
+    }
+
+    getStringLength();     // 0
+    getStringLength('hi'); // 2
+    ```
+    - 1번과 2번은 동일한 기능을 합니다.
+
+<br>
+
+### 옵셔널 체이닝 연산자(Optional Chaning Operator)
+> ES11에서 도입되었습니다. `?.`를 통해 표현합니다.
+
+좌항의 피연산자가 null/undefined인 경우 undefined를 반환하고, 그렇지 않으면 우항의 프로퍼티 참조를 이어갑니다.
+
+논리 연산자를 활용한 단축 평가와는 뭐가 다른지 비교해볼까요?
+
+```js
+// 객체 프로퍼티 참조
+const elem = null;
+// 논리 연산자 :
+let value = elem && elem.value;   // null
+// 옵셔널 체이닝 연산자 : 
+value = elem?.value;              // undefined
+
+// 예외 상황
+const str = '';
+const length = str && str.length; //  ''
+length = str?.length;             // 0
+```
+- `논리곱(&&)`은 평가 후 좌항의 피연산자를 그대로 반환하는 반면, `옵셔널 체이닝 연산자(?.)`는 객체를 가리키는 변수의 null/undefined가 아닌지 확인하고 프로퍼티를 참조합니다.
+- 예외는 뭘까요? 논리 연산자로는 변수 `str`은 문자열임에도 `length` 프로퍼티 참조를 하지 못합니다. 원시 값에 대한 래퍼 객체(Wraper Object)의 특성 때문에(나중에 자세히 다룹니다) Falsy Value로 판단하여 좌항의 피연산자를 그대로 출력하는 반면, 옵셔널 체이닝 연산자는 null/undefined를 검사하기 때문에 우항의 프로퍼티 참조가 가능합니다.
+
+<br>
+
+### null 병합 연산자(Nullish Coalescing)
+> ES11에서 도입되었습니다. `??`를 통해 표현합니다.
+
+좌항의 피연산자가 null/undefined인 경우 우항의 피연산자를 반환하고, 아니라면 좌항의 피연산자를 반환합니다.
+
+얼핏 `논리합(||)`과 비슷해보이네요. 자세히 알아볼까요?
+
+```js
+// null 병합 연산자 : 
+let str = null ?? 'string value'; // 'string value'
+// 논리 연산자 : 
+str = '' || 'string value';       // 'string value'
+
+// 예외 상황
+str = '' ?? 'string value';       // ''
+```
+- 옵셔널 체이닝 연산자와 유사합니다. `논리합(||)`은 좌항의 피연산자가 Falsy Value라면 우항의 피연산자를 반환합니다. 그러나 null 병합 연산자는 Falsy Value가 아닌 null/undefined가 아니라면 좌항의 피연산자를 반환합니다.
+
+<hr>
+<br>
+<hr>
