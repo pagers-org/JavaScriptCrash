@@ -238,26 +238,3 @@ null 값은 유일합니다.
 <hr>
 <br>
 <hr>
-
-이번 장에서 타입 변환에 대해 자세히 다룹니다. 종류와 그 내용까지 말이죠.
-
-## 타입 변환(Type Conversion)
-> 자바스크립트의 모든 값은 타입이 존재하며, 이를 변환하는 방법에는 개발자에 의해 변환되는 방법과 개발자의 의도와 상관 없이 변환되는 방법이 있습니다.
-
-- 타입 캐스팅(Type Casting, 또는 명시적 타입 변환(Explicit Coercion)) : 개발자가 의도적으로 값의 타입을 바꾸는 방법입니다.
-  ```js
-  let a = 10;
-  let b = a.toString();     // 여기서 타입 캐스팅이 일어납니다.
-  console.log(typeof b, b); // 'string', '10'
-  console.log(typeof a, a); // 'number', 10
-  ```
-
-- 타입 강제 변환(Type Coercion, 또는 암묵적 타입 변환(Implicit Coercion)) : 자바스크립트 엔진에 의해 암묵적으로 타입이 자동 변환되는 방법입니다.
-  ```js
-  let a = 10;
-  let b = a + '';
-  console.log(typeof b, b); // 'string', '10'
-  console.log(typeof a, a); // 'number', 10
-  ```
-
-<br>
