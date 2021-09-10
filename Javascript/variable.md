@@ -40,12 +40,116 @@ ES6에 진입하면서 생긴 개념으로 한 번 할당한 값을 바꿀 수 �
 
 자바스크립트에서 식별자를 정의하는 규칙이 있습니다.
 
-1. 식별자는 반드시 글자, 달러 기호($), 밑줄(_)로 시작한다.
-2. 식별자에는 글자, 숫자, 달러 기호, 밑줄만 쓸 수 있다.
-3. 유니코드 문자도 쓸 수 있다.
-4. **예약어** 는 식별자로 쓸 수 없다.
+### 식별자 정의 규칙
+> 네이밍 컨벤션(Naming Convention)이라고도 합니다.
 
-덧붙여서, 이 식별자를 표기하는 방식에도 여러가지가 있는데요, 대표적인 방법으로는 아래와 같습니다.
+1. 식별자는 반드시 글자, 달러 기호($), 밑줄(_)로 시작합니다.
+2. 식별자에는 글자, 숫자, 달러 기호, 밑줄만 쓸 수 있습니다.
+3. 유니코드 문자도 쓸 수 있습니다.
+4. **예약어** 는 식별자로 쓸 수 없습니다. 아래에서 예약어의 종류를 살펴볼 수 있습니다.
+
+<br>
+
+### 예약어의 종류
+> ES5, 6 등 버전이 업데이트 되면서 추가되는 예약어도 있습니다.
+
+<table>
+  <thead>
+    <th colspan="5">
+      예약어의 종류(알파벳 순)
+    </th>
+  </thead>
+  <tbody>
+    <tr>
+      <td>abstract</td>
+      <td>arguments</td>
+      <td>boolean</td>
+      <td>break</td>
+      <td>byte</td>
+    </tr>
+    <tr>
+      <td>case</td>
+      <td>catch</td>
+      <td>char</td>
+      <td>class</td>
+      <td>const</td>
+    </tr>
+    <tr>
+      <td>continue</td>
+      <td>debugger</td>
+      <td>default</td>
+      <td>delete</td>
+      <td>do</td>
+    </tr>
+    <tr>
+      <td>extends</td>
+      <td>false</td>
+      <td>final</td>
+      <td>finally</td>
+      <td>float</td>
+    </tr>
+    <tr>
+      <td>for</td>
+      <td>function</td>
+      <td>goto</td>
+      <td>if</td>
+      <td>implements</td>
+    </tr>
+    <tr>
+      <td>import</td>
+      <td>in</td>
+      <td>instanceof</td>
+      <td>int</td>
+      <td>interface</td>
+    </tr>
+    <tr>
+      <td>let</td>
+      <td>long</td>
+      <td>native</td>
+      <td>new</td>
+      <td>null</td>
+    </tr>
+    <tr>
+      <td>package</td>
+      <td>private</td>
+      <td>protected</td>
+      <td>public</td>
+      <td>return</td>
+    </tr>
+    <tr>
+      <td>short</td>
+      <td>static</td>
+      <td>super</td>
+      <td>switch</td>
+      <td>synchronized</td>
+    </tr>
+    <tr>
+      <td>this</td>
+      <td>throw</td>
+      <td>throws</td>
+      <td>transient</td>
+      <td>true</td>
+    </tr>
+    <tr>
+      <td>try</td>
+      <td>typeof</td>
+      <td>var</td>
+      <td>void</td>
+      <td>volatile</td>
+    </tr>
+    <tr>
+      <td>while</td>
+      <td>with</td>
+      <td>yield</td>
+      <td colspan="2"></td>
+    </tr>
+  </tbody>
+</table>
+
+<br>
+
+### 식별자 표기 방식
+이 식별자를 표기하는 방식에도 여러가지가 있는데요, 대표적인 방법으로는 아래와 같습니다.
 
 ```js
 /* 카멜 케이스(camelCase) */
@@ -203,3 +307,7 @@ num = 0;
   - var x; 또는 var x = 3; 모두 문입니다.
 2. 할당문은 표현식이고, 문입니다.
   - x = 3; 또는 3 모두 표현식입니다.
+
+
+<hr>
+<br>
