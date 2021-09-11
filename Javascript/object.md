@@ -275,5 +275,21 @@ ES6부터 조금 더 유연하게 객체 리터럴을 확장시킬 수 있습니
 
 객체 리터럴을 제외한 나머지 네 가지 방법은 함수(프로토타입 기반)를 사용하여 객체를 생성하는 것을 꼭 알아두세요.
 
+<br>
+<hr>
+<br>
+
+> 2021-09-11, <a href="https://github.com/karohani">karohani</a>와 스터디 중 식별된 추가적으로 공부가 필요한 내용들
+
+## :white_check_mark: 자바스크립트의 메모리 관리
+### 의문점
+- 자바스크립트는 힙 메모리에 할당하여 사용했던 객체 값들이 필요 없어졌을 때, 어떻게 `Garbage Collection`할까요?
+
+### 정리 된 내용
+- C, C++, Python은 스마트 포인터(Smart Pointer)로 **참조 횟수 계산 방식(Reference Counting)** 알고리즘을 사용합니다.
+- Java, JavaScript는 **표시하고-쓸기(Mark-and-Sweep)** 알고리즘을 사용합니다.
+
+- 참조 [Link](https://developer.mozilla.org/ko/docs/Web/JavaScript/Memory_Management#mark-and-sweep_algorithm)
+
 <hr>
 <br>
