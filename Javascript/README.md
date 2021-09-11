@@ -46,8 +46,8 @@
       3st Week<br>
       (2021-09-11)
       </td>
-      <td><a href="">원시 값과 참조 값(객체 리터럴)</a></td>
-      <td>기재하지 않았음</td>
+      <td>원시 값과 참조 값(<a href="https://github.com/FECrash/JavascriptCrash/blob/main/Javascript/object.md">객체</a>)</td>
+      <td>-</td>
     </tr>
     <tr>
       <td><a href="">함수</a></td>
@@ -56,6 +56,20 @@
     <tr>
       <td><a href="">스코프</a></td>
       <td>기재하지 않았음</td>
+    </tr>
+    <tr>
+      <td rowspan="3" align="center">
+      4st Week<br>
+      (2021-09-18)
+      </td>
+      <td><a href=""></a>-</td>
+      <td rowspan="3" align="center">온라인 진행</td>
+    </tr>
+    <tr>
+      <td><a href=""></a>-</td>
+    </tr>
+    <tr>
+      <td><a href=""></a>-</td>
     </tr>
   </tbody>
 </table>
