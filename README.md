@@ -31,7 +31,7 @@
 
 ## 🛠 Contributors 🛠
 
-<table>
+<table align="center">
     <tr height="140px">
         <td align="center">
             <a href="https://github.com/InSeong-So"><img height="100px" width="100px" src="https://avatars.githubusercontent.com/u/18283006?v=4"/></a>
@@ -48,11 +48,11 @@
             <br />
             <a href="https://github.com/heejinna">heejinna</a>
         </td>
-        <!-- <td align="center">
-            <a href="https://github.com/zinozino1"><img height="100px" width="100px" src="https://avatars.githubusercontent.com/u/52441478?v=4"/></a>
+        <td align="center">
+            <a href="https://github.com/HyoungDong"><img height="100px" width="100px" src="https://avatars.githubusercontent.com/u/52812307?v=4"/></a>
             <br />
-            <a href="https://github.com/zinozino1">zinozino1</a>
-        </td> -->
+            <a href="https://github.com/HyoungDong">HyoungDong</a>
+        </td>
     </tr>
 </table>
 
