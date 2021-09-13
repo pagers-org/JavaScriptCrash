@@ -58,18 +58,21 @@
       <td>-</td>
     </tr>
     <tr>
-      <td rowspan="3" align="center">
+      <td rowspan="4" align="center">
       4st Week<br>
       (2021-09-18)
       </td>
-      <td><a href=""></a>-</td>
-      <td rowspan="3" align="center">온라인 진행</td>
+      <td><a href="https://github.com/FECrash/JavascriptCrash/blob/main/Javascript/global_variables"></a>전역 변수의 문제점</td>
+      <td rowspan="4" align="center">온라인 진행</td>
     </tr>
     <tr>
-      <td><a href=""></a>-</td>
+      <td><a href="https://github.com/FECrash/JavascriptCrash/blob/main/Javascript/let_const_block_level_scope.md">let, const 키워드와 블록 레벨 스코프</a></td>
     </tr>
     <tr>
-      <td><a href=""></a>-</td>
+      <td><a href="https://github.com/FECrash/JavascriptCrash/blob/main/Javascript/property_attribue.md">프로퍼티 어트리뷰트</a></td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/FECrash/JavascriptCrash/blob/main/Javascript/constructor.md">생성자 함수에 의한 객체 생성</a></td>
     </tr>
   </tbody>
 </table>
