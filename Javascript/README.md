@@ -50,12 +50,12 @@
       <td>-</td>
     </tr>
     <tr>
-      <td><a href="">함수</a></td>
-      <td>기재하지 않았음</td>
+      <td><a href="https://github.com/FECrash/JavascriptCrash/blob/main/Javascript/function.md">함수</a></td>
+      <td>-</td>
     </tr>
     <tr>
-      <td><a href="">스코프</a></td>
-      <td>기재하지 않았음</td>
+      <td><a href="https://github.com/FECrash/JavascriptCrash/blob/main/Javascript/scope.md">스코프</a></td>
+      <td>-</td>
     </tr>
     <tr>
       <td rowspan="3" align="center">
