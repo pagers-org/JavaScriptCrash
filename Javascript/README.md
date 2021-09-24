@@ -62,7 +62,7 @@
       4st Week<br>
       (2021-09-18)
       </td>
-      <td><a href="https://github.com/FECrash/JavascriptCrash/blob/main/Javascript/global_variables"></a>전역 변수의 문제점</td>
+      <td><a href="https://github.com/FECrash/JavascriptCrash/blob/main/Javascript/global_variables">전역 변수의 문제점</a></td>
       <td rowspan="4" align="center">온라인 진행</td>
     </tr>
     <tr>
@@ -73,6 +73,26 @@
     </tr>
     <tr>
       <td><a href="https://github.com/FECrash/JavascriptCrash/blob/main/Javascript/constructor.md">생성자 함수에 의한 객체 생성</a></td>
+    </tr>
+    <tr>
+      <td rowspan="4" align="center">
+      5st Week<br>
+      (2021-09-25)
+      </td>
+      <td><a href="">함수와 일급 객체</a></td>
+      <td>기재하지 않음</td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/FECrash/JavascriptCrash/blob/main/Javascript/prototype.md">프로토타입</a></td>
+      <td>-</td>
+    </tr>
+    <tr>
+      <td><a href="">strict mode</a></td>
+      <td>기재하지 않음</td>
+    </tr>
+    <tr>
+      <td><a href="">빌트인 객체</a></td>
+      <td>기재하지 않음</td>
     </tr>
   </tbody>
 </table>
