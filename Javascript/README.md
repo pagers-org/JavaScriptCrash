@@ -62,7 +62,7 @@
       4st Week<br>
       (2021-09-18)
       </td>
-      <td><a href="https://github.com/FECrash/JavascriptCrash/blob/main/Javascript/global_variables">전역 변수의 문제점</a></td>
+      <td><a href="https://github.com/FECrash/JavascriptCrash/blob/main/Javascript/global_variables.md">전역 변수의 문제점</a></td>
       <td rowspan="4" align="center">온라인 진행</td>
     </tr>
     <tr>
