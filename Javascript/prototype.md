@@ -603,5 +603,48 @@ constructor 프로퍼티는 prototype 프로퍼티로 자신을 참조하고 있
 
 <br>
 
-<hr>
+- 참조 [Link]()
+
+<br>
+
+☑️ 왜 일반 객체의 프로토타입과 함수 객체의 프로토타입이 구분될까요?
+### 의문점
+- `constructor 프로퍼티는 prototype 프로퍼티로 자신을 참조하고 있는 생성자 함수를 가리키며, 이런 연결은 생성자 함수가 생성될 때에 이뤄집니다`라고 이해했는데, 그럼 아래의 경우는 어떻게 설명해야 할까요?
+
+- 해당 예제로 이해한 것은 `__proto__`는 Object.prototype만이 소유하고, 다른 객체들은 `빌려 쓴다`였습니다.
+  ```js
+  const circle = { radius: 5};
+
+  // 1번
+  console.log(circle.hasOwnProperty('__proto__'));
+  // 결과 : false
+
+  // 2번
+  console.log(Object.getOwnPropertyDescriptor(Object.prototype, '__proto__'));
+  // 결과 : {enumerable: false, configurable: true, get: ƒ, set: ƒ}
+
+  // 3번
+  console.log({}.__proto__ === Object.prototype);
+  // 결과 : true
+  ```
+  - 이해한대로 작동하고, 정확한 것 같습니다.
+
+
+- 그런데...?
+  ```js
+  // 3번 : 일반 객체
+  console.log(({}).hasOwnProperty('prototype'));
+  // 결과 : false
+  ```
+  - 이건 왜 false일까요?
+
+### 정리 된 내용
+> TODO
+
+`{}`도 생성자 함수(new Object())에 의해 생성되므로 생성자 함수의 인스턴스인 건 알겠습니다.
+
+<br>
+
+- 참조 [Link]()
+
 <br>
