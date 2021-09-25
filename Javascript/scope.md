@@ -237,7 +237,7 @@ bar();  // ?
 
 > 2021-09-11, <a href="https://github.com/karohani">karohani</a>와 스터디 중 식별된 추가적으로 공부가 필요한 내용들
 
-## :white_check_mark: this가 바인딩 되는 시점은 렉시컬 환경 정의와 다르다?
+## ✅ this가 바인딩 되는 시점은 렉시컬 환경 정의와 다르다?
 ### 의문점
 - 자바스크립트의 렉시컬 환경(Lexical Environment)는 **선언된 시점**에서 스코프를 갖는데, `this`는... 다른가요? 아래 예제 코드를 보죠!
 

@@ -273,7 +273,7 @@ num = 0;
 
 > 2021-09-04, <a href="https://github.com/inseong-so">InSeong-So</a>가 작성한 쪽지 시험을 스터디원과 함께 진행한 후 의문점을 가지다 해결한 내용
 
-## :white_check_mark: var, let, const의 호이스팅
+## ✅ var, let, const의 호이스팅
 ### 의문점
 - var 만 호이스팅 된다고 하셨는데 let, const도 호이스팅 되지만 액세스가 불가능한 것으로 알고 있습니다.
 
@@ -284,7 +284,7 @@ num = 0;
 
 <br>
 
-## :white_check_mark: 표현식과 문의 구분
+## ✅ 표현식과 문의 구분
 
 <div align=center>
 
