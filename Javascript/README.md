@@ -79,8 +79,8 @@
       5st Week<br>
       (2021-09-25)
       </td>
-      <td><a href="">함수와 일급 객체</a></td>
-      <td>기재하지 않음</td>
+      <td>함수와 <a href="https://github.com/FECrash/JavascriptCrash/blob/main/Javascript/function.md#%EC%9D%BC%EA%B8%89-%EA%B0%9D%EC%B2%B4">일급 객체</a></td>
+      <td><a href="https://github.com/FECrash/JavascriptCrash/blob/main/Javascript/function.md">3회차 문서 함수</a>에 통합</td>
     </tr>
     <tr>
       <td><a href="https://github.com/FECrash/JavascriptCrash/blob/main/Javascript/prototype.md">프로토타입</a></td>
