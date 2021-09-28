@@ -17,7 +17,110 @@
 그런데, 일급 객체가 뭐죠?
 
 ### 일급 객체
+> 함수는 일반 객체가 아니라 **일급 객체(First-Class Object)** 로 취급됩니다.
 
+- 아래와 같은 조건을 만족하면 일급 객체라고 해요.
+  1. 무명 리터럴로 생성(런타임에 생성이 가능하다는 이야기에요)할 수 있습니다.
+  2. 변수, 각종 자료구조(Object, Array, Set, Map 등)에 저장할 수 있습니다.
+  3. 함수의 매개변수(Parameter)로 전달할 수 있습니다.
+  4. 함수의 반환(return) 값으로 사용할 수 있습니다.
+- 예제 코드를 보면 더 정확히 알겠죠?
+  ```js
+  // 1번, 2번 조건에 충족됩니다.
+  const increase = function (num) {
+    return ++num;
+  }
+  console.log(increase);                // ƒ (num) { return ++num; }
+  console.log(increase(3));             // 4
+
+
+  // 3번 조건에 충족됩니다.
+  const predicates = { increase };
+  console.log(predicates);              // {increase: ƒ}
+  console.log(predicates.increase(3));  // 4
+
+  // 3번, 4번 조건에 충족됩니다.
+  function makeCounter(predicates) {
+    let num = 0;
+
+    return function() {
+      num = predicates(num);
+      return num;
+    };
+  }
+
+  const increaser = makeCounter(predicates.increase);
+  console.log(increaser());             // 1
+  console.log(increaser());             // 2
+  ```
+
+`함수는 일급 객체`라는 것은 함수를 객체와 동일하게 사용할 수 있다는 의미입니다. 즉, 함수는 값을 가용할 수 있는 곳이라면 리터럴로 정의할 수 있고 런타임에 함수 객체로 평가되는 것이죠.
+
+함수 객체와 일반 객체는 아래와 같은 차이가 있습니다.
+1. 소괄호(`()`)를 사용한 **호출**인데, 일반 객체는 호출이 불가능하지만 함수 객체는 호출할 수 있습니다.
+2. 함수 객체에는 일반 객체에 없는 함수 고유 프로퍼티가 존재합니다.
+
+함수도 일반 객체처럼 프로퍼티를 소유할 수 있습니다. 즉, Object.getOwnPropertyDescriptors를 사용할 수 있죠. 함수 객체가 소유한 프로퍼티를 살펴볼까요?
+
+- **arguments** 프로퍼티
+  - arguments 객체는 함수 호출 시 전달된 인수(argument)들의 정보를 담고 있는 순회 가능(Iterable)한 유사 배열 객체입니다.
+  - 함수 내부에서 지역 변수처럼 사용되며 외부에서는 참조할 수 없습니다.
+  - ES3부터 표준에서 폐지되어 사용이 권장되지 않습니다.
+  - 자바스크립트는 함수의 매개변수와 인수의 개수가 일치하는지 확인하지 않아 에러가 발생하지 않습니다.
+    - 지정된 개수보다 적은 경우 : 매개변수는 undefined로 초기화됩니다.
+    - 지정된 개수보다 많은 경우 : 암묵적으로 arguments 객체에 순서대로 저장(순회 가능한 유사 배열 객체이므로)됩니다.
+    - 이러한 이유로 `가변 인자 함수`를 구현할 때 유용합니다.
+  - 단, 유사 배열 객체는 배열이 아니므로 배열 메서드를 사용할 수 없으나 아래의 방법으로 간접 호출할 수 있습니다.
+    1. `Function.prototype.call, Function.prototype.apply` 사용하기
+      ```js
+      function sum(){
+        // const array = Array.prototype.slice.apply(arguments);
+        const array = Array.prototype.slice.call(arguments);
+        return array.reduce(function (pre, cur){
+          return pre + cur;
+        }, 0);
+      }
+      console.log(sum(1, 2, 3, 4, 5));  // 15
+      ```
+    2. ES6의 Rest 파라미터
+      ```js
+      function sum(...args){
+        return args.reduce((pre, cur) => pre + cur, 0);
+      }
+      console.log(sum(1, 2, 3, 4, 5));  // 15
+      ```
+
+<br>
+
+- **caller** 프로퍼티
+  - 비표준 프로퍼티로 함수 자신을 호출한 함수를 가리킵니다.
+
+<br>
+
+- **length** 프로퍼티
+  - 함수를 정의할 때 선언한 매개변수의 개수를 가리킵니다.
+  - `arguments 객체의 length 프로퍼티`와 `함수 객체의 length 프로퍼티`의 값은 다를 수 있습니다.
+    - 전자의 경우 인자(argument)의 개수, 후자의 경우 매개변수(parameter)의 개수를 가리키기 떄문이지요.
+
+<br>
+
+- **name** 프로퍼티
+  - ES6에서 표준이 되었으며 함수 이름을 나타냅니다. ES5와 ES6의 동작이 서로 다릅니다.
+  - 익명 함수 표현식의 경우 `ES5는 빈 문자열`을, `ES6는 함수 객체를 가리키는 식별자`를 값으로 갖습니다.
+
+<br>
+
+- **__proto__** 접근자 프로퍼티
+  - `[[Prototype]]` 내부 슬롯이 가리키는 프로토타입 객체에 접근하기 위해 사용합니다.
+
+<br>
+
+- **prototype** 프로퍼티
+  - 생성자 함수로 호출할 수 있는 객체로 constructor만이 소유합니다.
+  - 일반 객체와 생성자 함수로 호출할 수 없는 non-constructor는 prototype 프로퍼티가 존재하지 않습니다.
+    - 즉, 함수가 객체를 생성하는 생성자 함수로 호출될 때, 생성자 함수가 생성할 인스턴스의 프로토타입 객체를 가리키는 거죠.
+
+`__proto__`와 `[[Prototype]]`에 대해서는 [프로토타입 페이지](https://github.com/FECrash/JavascriptCrash/blob/main/Javascript/prototype.md)를 참고해주세요.
 
 <br>
 
