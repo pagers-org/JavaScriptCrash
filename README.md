@@ -29,31 +29,128 @@
 <br>
 <hr>
 
-## 🛠 Contributors 🛠
+## 👀 바로가기 👀
+### 😘자바스크립트 정리 목차
+
+<br>
+
+<details><summary><strong>펼쳐서 자세히 보기</strong></summary>
+
+<br>
+
+💯 마크는 개인적으로 생각하는 자바스크립트 핵심 개념입니다.
+
+<br>
 
 <table align="center">
     <tr height="140px">
-        <td align="center">
-            <a href="https://github.com/InSeong-So"><img height="100px" width="100px" src="https://avatars.githubusercontent.com/u/18283006?v=4"/></a>
-            <br />
-            <a href="https://github.com/InSeong-So">InSeong-So</a>
-        </td>
-        <td align="center">
-            <a href="https://github.com/kimsooin77"><img height="100px" width="100px" src="https://avatars.githubusercontent.com/u/82991292?v=4"/></a>
-            <br />
-            <a href="https://github.com/kimsooin77">kimsooin77</a>
-        </td>
-        <td align="center">
-            <a href="https://github.com/heejinna"><img height="100px" width="100px" src="https://avatars.githubusercontent.com/u/87808507?v=4"/></a>
-            <br />
-            <a href="https://github.com/heejinna">heejinna</a>
-        </td>
-        <td align="center">
-            <a href="https://github.com/HyoungDong"><img height="100px" width="100px" src="https://avatars.githubusercontent.com/u/52812307?v=4"/></a>
-            <br />
-            <a href="https://github.com/HyoungDong">HyoungDong</a>
-        </td>
+      <td align="center" width="33%">
+        💯
+        <br>
+        <a href="">자바스크립트란?</a>
+      </td>
+      <td align="center" width="33%">
+        <a href="https://github.com/FECrash/JavascriptCrash/blob/main/Javascript/variable.md">변수, 표현식과 문</a>
+      </td>
+      <td align="center" width="33%">
+        <a href="https://github.com/FECrash/JavascriptCrash/blob/main/Javascript/data-type.md">데이터 타입</a>
+      </td>
     </tr>
+    <tr height="140px">
+      <td align="center" width="33%">
+        <a href="https://github.com/FECrash/JavascriptCrash/blob/main/Javascript/type-conversion.md">타입 변환</a>
+      </td>
+      <td align="center" width="33%">
+        <a href="https://github.com/FECrash/JavascriptCrash/blob/main/Javascript/operator.md">연산자와 단축 평가</a>
+      </td>
+      <td align="center" width="33%">
+        <a href="https://github.com/FECrash/JavascriptCrash/blob/main/Javascript/object.md">원시 값과 참조 값(객체)</a>
+      </td>
+    </tr>
+    <tr height="140px">
+      <td align="center" width="33%">
+        💯
+        <br>
+        <a href="https://github.com/FECrash/JavascriptCrash/blob/main/Javascript/function.md">함수와 일급 객체</a>
+      </td>
+      <td align="center" width="33%">
+        💯
+        <br>
+        <a href="https://github.com/FECrash/JavascriptCrash/blob/main/Javascript/scope.md">스코프</a>
+      </td>
+      <td align="center" width="33%">
+        <a href="https://github.com/FECrash/JavascriptCrash/blob/main/Javascript/global_variables.md">전역 변수의 문제점</a>
+      </td>
+    </tr>
+    <tr height="140px">
+      <td align="center" width="33%">
+        <a href="https://github.com/FECrash/JavascriptCrash/blob/main/Javascript/let_const_block_level_scope.md">let, const 키워드와 블록 레벨 스코프</a>
+      </td>
+      <td align="center" width="33%">
+        <a href="https://github.com/FECrash/JavascriptCrash/blob/main/Javascript/property_attribue.md">프로퍼티 어트리뷰트</a>
+      </td>
+      <td align="center" width="33%">
+        💯
+        <br>
+        <a href="https://github.com/FECrash/JavascriptCrash/blob/main/Javascript/constructor.md">생성자 함수에 의한 객체 생성</a>
+      </td>
+    </tr>
+    <tr height="140px">
+      <td align="center" width="33%">
+        💯
+        <br>
+        <a href="https://github.com/FECrash/JavascriptCrash/blob/main/Javascript/prototype.md">프로토타입</a>
+      </td>
+      <td align="center" width="33%">
+        <a href="https://github.com/FECrash/JavascriptCrash/blob/main/Javascript/strict_mode.md">strict mode</a>
+      </td>
+      <td align="center" width="33%">
+        <a href="https://github.com/FECrash/JavascriptCrash/blob/main/Javascript/built_in_object.md">빌트인 객체</a>
+      </td>
+    </tr>
+</table>
+
+<br>
+
+</details>
+
+<br>
+
+### 🥰 자바스크립트 회차별 쪽지시험
+> [쪽지시험지의 저작권은 저에게 있습니다.](https://github.com/InSeong-So)
+
+- 1회차 쪽지시험 [Link](https://docs.google.com/forms/d/e/1FAIpQLSejv3Q8BstGkDJm-yf6Eivc7TYlbknKTNK1NbkiMC99ALAJKg/viewform)
+- 2, 3회차 쪽지시험 [Link](https://docs.google.com/forms/d/e/1FAIpQLSdx2hjQxBAJYoDTfKzwDTnlfDosy88jhZ0wBKPbv8Eb20Hl_w/viewform)
+- 4회차 쪽지시험 [Link](https://docs.google.com/forms/d/e/1FAIpQLSfViuVWGHsSMS24Uj3pu4PXxxem-Dh9WGAg-cGPV1IzKqzx7A/viewform)
+
+<br>
+<hr>
+
+## 🛠 Contributors 🛠
+
+<table align="center">
+  <tr height="140px">
+    <td align="center">
+      <a href="https://github.com/InSeong-So"><img height="100px" width="100px" src="https://avatars.githubusercontent.com/u/18283006?v=4"/></a>
+      <br />
+      <a href="https://github.com/InSeong-So">InSeong-So</a>
+    </td>
+    <td align="center">
+      <a href="https://github.com/kimsooin77"><img height="100px" width="100px" src="https://avatars.githubusercontent.com/u/82991292?v=4"/></a>
+      <br />
+      <a href="https://github.com/kimsooin77">kimsooin77</a>
+    </td>
+    <td align="center">
+      <a href="https://github.com/heejinna"><img height="100px" width="100px" src="https://avatars.githubusercontent.com/u/87808507?v=4"/></a>
+      <br />
+      <a href="https://github.com/heejinna">heejinna</a>
+    </td>
+    <td align="center">
+      <a href="https://github.com/HyoungDong"><img height="100px" width="100px" src="https://avatars.githubusercontent.com/u/52812307?v=4"/></a>
+      <br />
+      <a href="https://github.com/HyoungDong">HyoungDong</a>
+    </td>
+  </tr>
 </table>
 
 <br>
