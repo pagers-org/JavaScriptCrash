@@ -87,12 +87,12 @@
       <td>-</td>
     </tr>
     <tr>
-      <td><a href="">strict mode</a></td>
-      <td>기재하지 않음</td>
+      <td><a href="https://github.com/FECrash/JavascriptCrash/blob/main/Javascript/strict_mode.md">strict mode</a></td>
+      <td>-</td>
     </tr>
     <tr>
-      <td><a href="">빌트인 객체</a></td>
-      <td>기재하지 않음</td>
+      <td><a href="https://github.com/FECrash/JavascriptCrash/blob/main/Javascript/built_in_object.md">빌트인 객체</a></td>
+      <td>-</td>
     </tr>
   </tbody>
 </table>
