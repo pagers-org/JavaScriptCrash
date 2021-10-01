@@ -470,7 +470,7 @@ console.log(foo[0], bar[0]);  // 9, 9
 
 # Conditional Expressions & Equality(조건식과 등가식)
 - == 나 != 보다는 === 와 !== 를 사용할 것
-- 조건식은 ToBoolean 메소드에 의해 아래와 같이 엄밀하게 비교
+- 조건식은 ToBoolean 메서드에 의해 아래와 같이 엄밀하게 비교
   - Objects 는 true 로 평가
   - undefined 는 false 로 평가
   - null 는 false 로 평가
@@ -678,7 +678,7 @@ console.log(foo[0], bar[0]);  // 9, 9
 
   ```
 
-- 메소드 체인이 길어지는 경우 적절히 들여쓰기(indentation)를 할 것
+- 메서드 체인이 길어지는 경우 적절히 들여쓰기(indentation)를 할 것
   ```js
   // bad
   $('#items').find('.selected').highlight().end().find('.open').updateCount();
@@ -986,7 +986,7 @@ console.log(foo[0], bar[0]);  // 9, 9
     };
     ```
 
-- 메소드의 반환 값으로 this를 반환함으로써 메소드 체인을 할 수 있습니다.
+- 메서드의 반환 값으로 this를 반환함으로써 메서드 체인을 할 수 있습니다.
   ```js
   // bad
   Jedi.prototype.jump = function() {
