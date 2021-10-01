@@ -62,6 +62,8 @@
 
 함수도 일반 객체처럼 프로퍼티를 소유할 수 있습니다. 즉, Object.getOwnPropertyDescriptors를 사용할 수 있죠. 함수 객체가 소유한 프로퍼티를 살펴볼까요?
 
+> TODO : callee 프로퍼티 누락되었음 2021-10-01
+
 - **arguments** 프로퍼티
   - arguments 객체는 함수 호출 시 전달된 인수(argument)들의 정보를 담고 있는 순회 가능(Iterable)한 유사 배열 객체입니다.
   - 함수 내부에서 지역 변수처럼 사용되며 외부에서는 참조할 수 없습니다.
@@ -71,7 +73,7 @@
     - 지정된 개수보다 많은 경우 : 암묵적으로 arguments 객체에 순서대로 저장(순회 가능한 유사 배열 객체이므로)됩니다.
     - 이러한 이유로 `가변 인자 함수`를 구현할 때 유용합니다.
   - 단, 유사 배열 객체는 배열이 아니므로 배열 메서드를 사용할 수 없으나 아래의 방법으로 간접 호출할 수 있습니다.
-    1. `Function.prototype.call, Function.prototype.apply` 사용하기
+    1. `Function.prototype.call, Function.prototype.apply` 사용하기. [참조1](https://github.com/FECrash/JavascriptCrash/blob/main/Javascript/this.md#functionprototypeapplycallbind-%EB%A9%94%EC%84%9C%EB%93%9C%EC%97%90-%EC%9D%98%ED%95%9C-%EA%B0%84%EC%A0%91-%ED%98%B8%EC%B6%9C)
       ```js
       function sum(){
         // const array = Array.prototype.slice.apply(arguments);
