@@ -10,6 +10,7 @@
 - [모던 자바스크립트 딥 다이브 - 1회차 쪽지시험 치기](https://docs.google.com/forms/d/e/1FAIpQLSejv3Q8BstGkDJm-yf6Eivc7TYlbknKTNK1NbkiMC99ALAJKg/viewform)
 - [모던 자바스크립트 딥 다이브 - 2, 3회차 쪽지시험 치기](https://docs.google.com/forms/d/e/1FAIpQLSdx2hjQxBAJYoDTfKzwDTnlfDosy88jhZ0wBKPbv8Eb20Hl_w/viewform)
 - [모던 자바스크립트 딥 다이브 - 4회차 쪽지시험 치기](https://docs.google.com/forms/d/e/1FAIpQLSfViuVWGHsSMS24Uj3pu4PXxxem-Dh9WGAg-cGPV1IzKqzx7A/viewform)
+- [모던 자바스크립트 딥 다이브 - 5회차 쪽지시험 치기](https://docs.google.com/forms/d/e/1FAIpQLSfAQ-vMwqN_Cyi3oZkKSdA4wpAWIhjG1cnfNCDpvFO_CM_W8A/viewform)
 
 <br>
 
