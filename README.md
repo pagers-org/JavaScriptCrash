@@ -2,18 +2,13 @@
 > 자바스크립트를 A to Z 해석하고 배워서 뿌셔봅시다!:mag_right: 덤으로 CS지식도 넓혀볼까요? :wink:
 
 ⛔️ 이 스터디는 발표 중심형입니다.
-1. 회차별로 쪽지시험을 칩니다. [리더](https://github.com/InSeong-So)가 준비하고, Google Form을 이용하여 성장 곡선을 관리합니다.
+1. 회차별로 쪽지시험을 칩니다. [리더 InSeong-So](https://github.com/InSeong-So)가 준비하고, Google Form을 이용하여 성장 곡선을 관리합니다.
 2. 공부한 회차에 대해서 한 명도 예외 없이 Blog나 Github, Notion 등에 정리하고 매주 팀원 리뷰와 피드백을 통해 성장합니다. 모든 과정이 당신의 노력의 증거가 됩니다!
 3. 오프라인에서의 발표와 청취를 통해 유연한 사고와 리더쉽을 겸비할 수 있습니다. 이해가 안 되는 부분, 잘못 설명하거나 정리된 부분을 서로 의논하여 한 단계 성장할 수 있습니다!
-<!-- 
-<br>
-<hr>
-
-:blue_book:TOC가 들어갈 자리입니다. -->
-
-<!-- START doctoc -->
-<!-- ref: https://github.com/technote-space/toc-generator -->
-<!-- END doctoc -->
+4. 발표가 안정화되고, 이론이 끝날 때쯤 진행 방식을 다시 변경합니다.
+   - 요구하는 과제, 기능, I/O에 대해 각자가 구현하는 시간을 갖습니다.
+   - 구현하지 못해도 이후부터는 리더가 강의식으로 진행합니다.
+   - 회차별 스터디가 종료되면 책의 이론을 정리하는 대신 코드 리뷰와 피드백으로 각자의 성장을 꾀합니다.
 
 <br>
 <hr>
@@ -25,6 +20,8 @@
 ✅ 공부한 4개 챕터는 개인이 정리하여 게재한 링크를 일요일까지 Slack에 공유합니다.
 
 ✅ 토요일은 오프라인 3시간(발표자 2명), 수요일은 온라인 2시간(정리 내용에 대한 리뷰 및 피드백)으로 진행합니다.
+
+✅ 이론 부분을 제외한 코드 구현부는 [여기](https://github.com/FECrash/JavascriptCrash-Making)로 분리하여 진행합니다.
 
 <br>
 <hr>
@@ -108,6 +105,30 @@
         <a href="https://github.com/FECrash/JavascriptCrash/blob/main/Javascript/built_in_object.md">빌트인 객체</a>
       </td>
     </tr>
+    <tr height="140px">
+      <td align="center" width="33%">
+        💯
+        <br>
+        <a href="https://github.com/FECrash/JavascriptCrash/blob/main/Javascript/this.md">this</a>
+      </td>
+      <td align="center" width="33%">
+        💯
+        <br>
+        <a href="https://github.com/FECrash/JavascriptCrash/blob/main/Javascript/execution_context.md">실행 컨텍스트</a>
+      </td>
+      <td align="center" width="33%">
+        💯
+        <br>
+        <a href="https://github.com/FECrash/JavascriptCrash/blob/main/Javascript/closure.md">클로저</a>
+      </td>
+    </tr>
+    <tr height="140px">
+      <td colspan="3" align="center" width="33%">
+        💯
+        <br>
+        <a href="https://github.com/FECrash/JavascriptCrash/blob/main/Javascript/class.md">클래스</a>
+      </td>
+    </tr>
 </table>
 
 <br>
@@ -117,11 +138,12 @@
 <br>
 
 ### 🥰 자바스크립트 회차별 쪽지시험
-> [쪽지시험지의 저작권은 저에게 있습니다.](https://github.com/InSeong-So)
+> 📌쪽지시험지의 저작권은 [InSeong-So](https://github.com/InSeong-So)에게 있습니다.
 
 - 1회차 쪽지시험 [Link](https://docs.google.com/forms/d/e/1FAIpQLSejv3Q8BstGkDJm-yf6Eivc7TYlbknKTNK1NbkiMC99ALAJKg/viewform)
 - 2, 3회차 쪽지시험 [Link](https://docs.google.com/forms/d/e/1FAIpQLSdx2hjQxBAJYoDTfKzwDTnlfDosy88jhZ0wBKPbv8Eb20Hl_w/viewform)
 - 4회차 쪽지시험 [Link](https://docs.google.com/forms/d/e/1FAIpQLSfViuVWGHsSMS24Uj3pu4PXxxem-Dh9WGAg-cGPV1IzKqzx7A/viewform)
+- 5회차 쪽지시험 [Link](https://docs.google.com/forms/d/e/1FAIpQLSfAQ-vMwqN_Cyi3oZkKSdA4wpAWIhjG1cnfNCDpvFO_CM_W8A/viewform)
 
 <br>
 <hr>
@@ -166,6 +188,10 @@
   - 저장소 Intro 수정
 - 🔧 `2021-09-19`
   - 저장소 과제 안내 초안 게시
+- 🔧 `2021-09-28`
+  - 저장소 접근성을 위한 README 개선
+- 🔧 `2021-10-03`
+  - 이론 종료 후 진행 방식에 대한 초안 작성
 
 <br>
 <hr>
