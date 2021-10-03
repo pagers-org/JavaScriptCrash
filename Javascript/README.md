@@ -94,6 +94,26 @@
       <td><a href="https://github.com/FECrash/JavascriptCrash/blob/main/Javascript/built_in_object.md">빌트인 객체</a></td>
       <td>-</td>
     </tr>
+    <tr>
+      <td rowspan="4" align="center">
+      6st Week<br>
+      (2021-10-02)
+      </td>
+      <td><a href="https://github.com/FECrash/JavascriptCrash/blob/main/Javascript/function.md#%EC%9D%BC%EA%B8%89-%EA%B0%9D%EC%B2%B4">this</a></td>
+      <td>-</td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/FECrash/JavascriptCrash/blob/main/Javascript/execution_context.md">실행 컨텍스트</a></td>
+      <td>수정 중</td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/FECrash/JavascriptCrash/blob/main/Javascript/closure.md">클로저</a></td>
+      <td>기재하지 않음</td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/FECrash/JavascriptCrash/blob/main/Javascript/class.md">클래스</a></td>
+      <td>기재하지 않음</td>
+    </tr>
   </tbody>
 </table>
 
