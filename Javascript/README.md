@@ -99,7 +99,7 @@
       6st Week<br>
       (2021-10-02)
       </td>
-      <td><a href="https://github.com/FECrash/JavascriptCrash/blob/main/Javascript/function.md#%EC%9D%BC%EA%B8%89-%EA%B0%9D%EC%B2%B4">this</a></td>
+      <td><a href="https://github.com/FECrash/JavascriptCrash/blob/main/Javascript/this.md">this</a></td>
       <td>-</td>
     </tr>
     <tr>
