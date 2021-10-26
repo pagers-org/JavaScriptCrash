@@ -104,7 +104,7 @@
     </tr>
     <tr>
       <td><a href="https://github.com/FECrash/JavascriptCrash/blob/main/Javascript/execution_context.md">실행 컨텍스트</a></td>
-      <td>내용 추가 필요</td>
+      <td>-</td>
     </tr>
     <tr>
       <td><a href="https://github.com/FECrash/JavascriptCrash/blob/main/Javascript/closure.md">클로저</a></td>
