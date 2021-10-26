@@ -193,5 +193,247 @@ console.log(me instanceof Person); // true
      - 자식 클래스에서 constructor를 선언하지 않으면 부모의 constructor를 바라봅니다.
      - 그러나 자식 클래스에서 constructor를 선언했음에도 super() 키워드를 사용하지 않는다면 참조 에러가 발생합니다.
 
+super 키워드는 양이 많아 단원을 분리합니다.
+
+<br>
+
+## super 키워드
+> super 키워드는 함수처럼 호출하거나 this와 같이 식별자처럼 참조할 수 있는 특수한 키워드입니다.
+
+super 키워드는 아래와 같이 동작합니다.
+1. super를 **호출**하면 슈퍼 클래스의 constructor()를 호출합니다.
+2. super를 **참조**하면 슈퍼 클래스의 메서드를 호출할 수 있습니다.
+
+자세히 알아볼까요?
+
+<br>
+
+### super 호출
+> new 연산자와 함께 서브 클래스를 호출하면서 전달한 인수는 super 호출을 통해 슈퍼 클래스의 constructor()에 전달됩니다.
+
+슈퍼 클래스에서 추가한 프로퍼티와 서브 클래스에서 추가한 프로퍼티를 갖는 인스턴스를 생성한다면 서브 클래스의 constructor를 생략할 수 없습니다.
+
+또한 new 연산자와 함께 서브 클래스를 호출하면서 전달한 인수를 슈퍼 클래스의 constructor에 super 키워드를 통하여 전달할 수 있습니다.
+```js
+// 슈퍼 클래스
+class Base {
+  constructor(a, b) { // ④
+    this.a = a;
+    this.b = b;
+  }
+}
+
+// 서브 클래스
+class Derived extends Base {
+  // 암묵적으로 constructor가 정의되지만 직접 입력할 수 있습니다.
+  // constructor(...args) { super(...args); }
+  constructor(a, b, c) {
+    super(a, b);
+    this.c = c;
+  }
+}
+
+const derived = new Derived(1, 2, 3);
+console.log(derived); // Derived {a: 1, b: 2, c: 3}
+```
+
+이 때 주의사항은 아래와 같습니다.
+1. 서브 클래스에서 constructor를 생략하지 않는 경우, 서브 클래스의 constructor에선 반드시 super를 호출해야 합니다.
+    ```js
+    class Base {}
+
+    class Derived extends Base {
+      constructor() {
+        // ReferenceError: Must call super constructor in derived class before accessing 'this' or returning from derived constructor
+        console.log('constructor call');
+      }
+    }
+
+    const derived = new Derived();
+    ```
+
+<br>
+
+2. 서브 클래스의 constructor에서 super를 호출하기 전에 this를 참조할 수 없습니다.
+    ```js
+    class Base {}
+
+    class Derived extends Base {
+      constructor() {
+        // ReferenceError: Must call super constructor in derived class before accessing 'this' or returning from derived constructor
+        this.a = 1;
+        super();
+      }
+    }
+
+    const derived = new Derived(1);
+    ```
+
+<br>
+
+3. super는 반드시 서브 클래스의 constructor에서만 호출해야 합니다. 서브 클래스가 아닌 클래스의 constructor나 함수에서 super를 호출하면 에러가 발생해요.
+    ```js
+    // 슈퍼 클래스
+    class Base {
+      constructor(name) {
+        this.name = name;
+      }
+
+      sayHi() {
+        return `Hi! ${this.name}`;
+      }
+    }
+
+    // 서브 클래스
+    class Derived extends Base {
+      sayHi() {
+        // super.sayHi는 슈퍼 클래스의 프로토타입 메서드를 가리킵니다.
+        return `${super.sayHi()}. how are you doing?`;
+      }
+    }
+
+    const derived = new Derived('Lee');
+    console.log(derived.sayHi()); // Hi! Lee. how are you doing?
+    ```
+
+<br>
+
+### super 참조
+> super는 자심을 참조하고 있는 메서드가 바인딩된 객체의 프로토타입을 가리킵니다.
+
+super를 참조로 사용하는 형태들을 볼까요?
+
+- 서브 클래스의 프로토타입 메서드 내에서 `super.메서드`는 슈퍼 클래스의 프로토타입 메서드를 가리킵니다.
+  ```js
+  // 슈퍼 클래스
+  class Base {
+    constructor(name) {
+      this.name = name;
+    }
+
+    sayHi() {
+      return `Hi! ${this.name}`;
+    }
+  }
+
+  // 서브 클래스
+  class Derived extends Base {
+    sayHi() {
+      // super.sayHi는 슈퍼 클래스의 프로토타입 메서드를 가리킵니다.
+      return `${super.sayHi()}. how are you doing?`;
+    }
+  }
+
+  const derived = new Derived('Lee');
+  console.log(derived.sayHi()); // Hi! Lee. how are you doing?
+  ```
+  - 단, super가 슈퍼 클래스의 메서드가 바인딩 된 객체인 슈퍼 클래스의 prototype 프로퍼티에 바인딩된 프로토타입을 참조할 수 있어야 합니다. 아래 처럼요.
+    ```js
+    // 슈퍼 클래스
+    class Base {
+      constructor(name) {
+        this.name = name;
+      }
+
+      sayHi() {
+        return `Hi! ${this.name}`;
+      }
+    }
+
+    class Derived extends Base {
+      sayHi() {
+        // __super는 Base.prototype을 가리킵니다.
+        const __super = Object.getPrototypeOf(Derived.prototype);
+        return `${__super.sayHi.call(this)} how are you doing?`;
+      }
+    }
+    ```
+  - 이렇게 동작하기 위해 메서드는 내부 슬롯 `[[HomeObject]]`를 가지며 자신을 바인딩하고 있는 객체를 가리킵니다.
+    - 단, ES6의 메서드 축약 표현으로 정의된 함수만 `[[HomeObject]]`를 갖습니다.
+      ```js
+      const obj = {
+        // [[HomeObject]]를 갖습니다.
+        foo() {},
+        // [[HomeObject]]를 갖지 않습니다.
+        bar: function () {}
+      };
+      ```
+
+  <br>
+
+  > 결국 super 참조를 의사 코드로 표현하면 아래와 같습니다.
+  ```js
+  super = Object.getPrototypeOf([[HomeObject]])
+  ```
+  1. `[[HomeObject]]`는 메서드 자신을 바인딩하고 있는 객체를 가리킵니다.
+  2. `[[HomeObject]]`를 통해 메서드 자신을 바인딩하고 있는 객체의 프로토타입을 찾을 수 있습니다.
+  3. 예로 들자면, Derived 클래스의 sayHi 메서드는 Derived.prototype에 바인딩되어 있습니다.
+     - 따라서 Derived 클래스의 sayHi 메서드의 `[[HomeObject]]`는 Derived.prototype이고,     이를 통해 Derived 클래스의 sayHi 메서드 내부의 super 참조가 Base.prototype으로 결정됩니다.
+     - 최종적으로 super.sayHi는 Base.prototype.sayHi를 가리키게 돼죠.
+
+<br>
+
+- 서브 클래의 정적 메서드 내에서 `super.메서드`는 슈퍼 클래스의 정적 메서드를 가리킵니다.
+  ```js
+  // 슈퍼 클래스
+  class Base {
+    static sayHi() {
+      return 'Hi!';
+    }
+  }
+
+  // 서브 클래스
+  class Derived extends Base {
+    static sayHi() {
+      // super.sayHi는 슈퍼 클래스의 정적 메서드를 가리킵니다.
+      return `${super.sayHi()} how are you doing?`;
+    }
+  }
+
+  console.log(Derived.sayHi()); // Hi! how are you doing?
+  ```
+
+<br>
+
+### 상속 클래스의 인스턴스 생성 과정
+> 클래스가 단독으로 인스턴스를 생성하는 과정보다 상속을 통해 인스턴스를 생성하는 과정이 더 복잡합니다.
+
+서브 클래스가 new 연산자와 함께 호출되면 아래의 과정을 통해 인스턴스를 생성합니다.
+
+- **서브 클래스의 super 호출**
+  - 자바스크립트 엔진은 클래스 평가 시 슈퍼 클래스와 서브 클래스를 구분하기 위해 `base` 또는 `derived`를 값으로 갖는 내부 슬롯 `[[ConstructorKind]]`를 갖습니다.
+  - 다른 클래스를 상속받지 않는 클래스는 내부 슬롯 `[[ConstructorKind]]`의 값이 `base`인 반면, 다른 클래스를 상속받는 클래스는 `derived`로 설정되며 이를 통해 동작이 구분됩니다.
+  - 상속받는 클래스가 new 연산자와 함께 호출되면 자신이 직접 인스턴스를 생성하지 않고 슈퍼 클래스에 인스턴스 생성을 위임합니다. 이게 바로 서브 클래스의 constructor에서 반드시 super를 호출해야 하는 이유죠.
+  - super가 호출되면 슈퍼 클래스의 constructor가 호출됩니다. 서브 클래스의 constructor 내부에 super 호출이 없다면 에러가 발생하는 이유는 실제 인스턴스를 생성하는 주체는 슈퍼 클래스이므로, 슈퍼 클래스의 constructor가 호출되지 않으면 인스턴스를 생성할 수 없기 때문이죠.
+
+<br>
+
+- **슈퍼 클래스의 인스턴스 생성과 this 바인딩**
+  - 슈퍼 클래스의 constructor 내부의 코드가 실행되기 이전에 암묵적으로 빈 객체를 생성하는데, 이 빈 객체가 클래스의 인스턴스입니다. 그리고 암묵적으로 생성된 빈 객체는 this에 바인딩 되죠. 결국 슈퍼 클래스의 constructor 내부의 this는 생성된 this를 가리키게 됩니다.
+  - 이 때 인스턴스는 슈퍼 클래스가 생성한 것이지만, new 연산자와 함게 호출된 클래스는 서브 클래스입니다. 즉, new 연산자와 함께 호출된 함수를 가리키는 `new.target`은 서브 클래스를 가리키며, 인스턴스는 `new.target`이 가리키는 서브 클래스가 생성한 것으로 처리됩니다.
+  - 결국 생성된 인스턴스의 프로토타입은 슈퍼 클래스의 prototype 프로퍼티가 가리키는 객체가 아니라 `new.target`이 가리키는 서브 클래스의 prototype 프로퍼티의 객체가 되는 것이죠.
+
+<br>
+
+- **슈퍼 클래스의 인스턴스 초기화**
+  - 슈퍼 클래스의 constructor가 실행되고 this에 바인딩된 인스턴스를 초기화합니다.
+
+<br>
+
+- **서브 클래스 constructor로의 복귀와 this 바인딩**
+  - super 호출이 종료되고 제어 흐름이 서브 클래스로 돌아오면 super가 반환한 인스턴스가 this에 바인딩됩니다.
+  - 서브 클래스는 별도의 인스턴스를 생성하지 않고 super가 반환한 인스턴스를 this에 바인딩하여 그대로 사용합니다.
+  - 이처럼 super가 호출되지 않으면 인스턴스가 생성되기는 커녕 this 바인딩도 이루어지지 않습니다. 서브 클래스의 constructor에서 super를 호출하기 전에는 this를 참조할 수 없는 이유죠.
+
+<br>
+
+- **서브클래스의 인스턴스 초기화**
+  - 서브 클래스의 constructor가 실행되고 this에 바인딩된 인스턴스에 프로퍼티를 추가합니다.
+
+<br>
+
+- **인스턴스 반환**
+  - 클래스의 모든 처리가 끝나면 완성된 인스턴스가 바인딩된 this가 암묵적으로 반환됩니다.
+
 <hr>
 <br>
