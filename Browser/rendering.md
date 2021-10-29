@@ -13,7 +13,7 @@
 
 <div align='center'>
 
-<img src='./img/web-browser-rendering.png' width='900'/>
+<img src='./img/rendering/web-browser-rendering.png' width='900'/>
 
 </div>
 
@@ -66,7 +66,7 @@
 
 <div align='center'>
 
-<img src='./img/http1-vs-http2-multiplexing.png' width='700'/>
+<img src='./img/rendering/http1-vs-http2-multiplexing.png' width='700'/>
 
 </div>
 
@@ -133,7 +133,7 @@
 
 <div align='center'>
 
-<img src='./img/dom_tree.jpg' width='900'/>
+<img src='./img/rendering/dom_tree.jpg' width='900'/>
 
 </div>
 
@@ -172,7 +172,7 @@ HTML과 마찬가지로, 수신된 CSS 규칙을 브라우저가 이해하고 �
 
 <div align='center'>
 
-<img src='./img/cssom_tree.jpg' width='900'/>
+<img src='./img/rendering/cssom_tree.jpg' width='900'/>
 
 </div>
 
@@ -208,7 +208,7 @@ CSS 처리에 시간이 얼마나 걸리는지 알고 싶다면 DevTools에서 �
 
 <div align='center'>
 
-<img src='./img/render_tree.jpg' width='900'/>
+<img src='./img/rendering/render_tree.jpg' width='900'/>
 
 </div>
 
@@ -259,7 +259,7 @@ CSS 처리에 시간이 얼마나 걸리는지 알고 싶다면 DevTools에서 �
 
 <div align='center'>
 
-<img src='./img/viewport.png' width='900'/>
+<img src='./img/rendering/viewport.png' width='900'/>
 
 </div>
 
@@ -275,7 +275,7 @@ CSS 처리에 시간이 얼마나 걸리는지 알고 싶다면 DevTools에서 �
 
 <div align='center'>
 
-<img src='./img/layout-timeline.jpg' width='600'/>
+<img src='./img/rendering/layout-timeline.jpg' width='600'/>
 
 </div>
 
@@ -296,7 +296,7 @@ CSS 처리에 시간이 얼마나 걸리는지 알고 싶다면 DevTools에서 �
 
 <div align='center'>
 
-<img src='./img/render_tree_layout_paint.jpg' width='900'/>
+<img src='./img/rendering/render_tree_layout_paint.jpg' width='900'/>
 
 </div>
 
@@ -328,7 +328,7 @@ DOM 또는 CSSOM이 수정된 경우, 화면에 다시 렌더링할 필요가 �
 
 <div align='center'>
 
-<img src='./img/javascript_parsing_excution.jpg' width='900'/>
+<img src='./img/rendering/javascript_parsing_excution.jpg' width='900'/>
 
 </div>
 
@@ -348,7 +348,7 @@ DOM 또는 CSSOM이 수정된 경우, 화면에 다시 렌더링할 필요가 �
 
 <div align='center'>
 
-<img src='./img/reflow_repaint.jpg' width='900'/>
+<img src='./img/rendering/reflow_repaint.jpg' width='900'/>
 
 </div>
 
